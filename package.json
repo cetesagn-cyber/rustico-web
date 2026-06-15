@@ -7,8 +7,9 @@
     "start": "node serve-static.mjs 8090",
     "serve": "node serve-static.mjs 8090",
     "validate": "node validate-site.mjs",
+    "quality": "node quality-check.mjs",
     "site:url": "node set-production-url.mjs",
-    "assets:logo": "node optimize-web-assets.mjs"
+    "assets:logo": "node optimize-uploaded-logo.mjs Rustico/logo-rustico-source.png"
   },
   "dependencies": {
     "jimp": "^1.6.1"

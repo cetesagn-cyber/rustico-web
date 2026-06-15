@@ -7,8 +7,13 @@ const requiredFiles = [
   'robots.txt',
   'sitemap.xml',
   'serve-static.mjs',
+  'Rustico/logo-rustico-source.png',
   'Rustico/logo-rustico-web.png',
+  'Rustico/logo-rustico-navbar.png',
+  'Rustico/logo-rustico-footer.png',
   'Rustico/logo-rustico-og.png',
+  'Rustico/favicon.png',
+  'Rustico/apple-touch-icon.png',
 ];
 
 const report = {

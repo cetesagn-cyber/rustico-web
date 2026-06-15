@@ -19,9 +19,10 @@ http://127.0.0.1:8090/
 
 ```bash
 npm run validate
+npm run quality
 ```
 
-La validacion revisa archivos requeridos, titulos, meta descriptions, scripts inline y IDs duplicados.
+La validacion revisa archivos requeridos, titulos, meta descriptions, scripts inline, IDs duplicados, assets locales, enlaces internos, favicon y texto roto por codificacion. El detalle de auditoria queda en `QUALITY_CHECKLIST.md`.
 
 ## Publicar en GitHub Pages
 
