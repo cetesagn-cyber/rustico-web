@@ -46,11 +46,11 @@ Fecha de revision: 15 de junio de 2026
 - [x] Favicon y Apple Touch Icon instalados.
 - [x] Sitemap y robots apuntan a la URL publicada.
 - [x] Logo optimizado generado desde el logo adjunto:
-  - `Rustico/logo-rustico-navbar.png`
-  - `Rustico/logo-rustico-footer.png`
-  - `Rustico/logo-rustico-og.png`
-  - `Rustico/favicon.png`
-  - `Rustico/apple-touch-icon.png`
+  - `Rustico/logo-rustico-navbar-gold.png`
+  - `Rustico/logo-rustico-footer-gold.png`
+  - `Rustico/logo-rustico-og-gold.png`
+  - `Rustico/favicon-gold.png`
+  - `Rustico/apple-touch-icon-gold.png`
 - [ ] PageSpeed Insights: intento realizado, API respondio `429 Too Many Requests`. Ejecutar nuevamente desde https://pagespeed.web.dev/ cuando el limite lo permita.
 
 ## Seguridad y analitica
