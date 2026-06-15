@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.agents/
+Disallow: /.codex/
+Disallow: /MIGRACION_RUSTICO_20260610-205223/
+Disallow: /MIGRACION_RUSTICO_FULL_20260610-205416/
+Disallow: /MIGRACION_RUSTICO_PORTABLE_20260610-205257/
+
+Sitemap: https://cetesagn-cyber.github.io/rustico-web/sitemap.xml

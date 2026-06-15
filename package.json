@@ -1,0 +1,16 @@
+{
+  "name": "rustico-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node serve-static.mjs 8090",
+    "serve": "node serve-static.mjs 8090",
+    "validate": "node validate-site.mjs",
+    "site:url": "node set-production-url.mjs",
+    "assets:logo": "node optimize-web-assets.mjs"
+  },
+  "dependencies": {
+    "jimp": "^1.6.1"
+  }
+}

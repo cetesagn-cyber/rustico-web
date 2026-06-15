@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+
+# Local/editor state
+.abacusai/
+.claude/
+.agents/
+.codex/
+.DS_Store
+Thumbs.db
+
+# Logs and runtime output
+*.log
+server-*.log
+npm-debug.log*
+
+# Backups and migration packages
+*.backup-*.html
+index.backup-*.html
+MIGRACION_RUSTICO_*/
+MIGRACION_RUSTICO_FULL_*/
+MIGRACION_RUSTICO_PORTABLE_*/
+
+# Local/private workflow exports
+n8n-workflows/
+
+# Heavy logo masters kept locally; the site uses optimized web assets
+Rustico/logo-rustico-4k*.png
+Rustico/logo-rustico.png
+Rustico/Logo nuevo 1.png
+Rustico/*preview*.png
+
+# Generated/experimental helper scripts
+adapt-logo.js
+resize-logo.js
+test-logo.js
+improve-logo-4k.mjs
+sharpen-logo.mjs
+solid-logo.mjs
+solid-clean-logo.mjs
