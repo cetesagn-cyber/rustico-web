@@ -107,6 +107,17 @@ function recolorBrandGold(image) {
   return image;
 }
 
+function eraseSubtitle(image) {
+  const startY = Math.floor(image.bitmap.height * 0.735);
+  const startX = Math.floor(image.bitmap.width * 0.34);
+
+  image.scan(startX, startY, image.bitmap.width - startX, image.bitmap.height - startY, function(_x, _y, idx) {
+    this.bitmap.data[idx + 3] = 0;
+  });
+
+  return image;
+}
+
 function enhanceDefinition(image) {
   const src = Buffer.from(image.bitmap.data);
   const { width, height, data } = image.bitmap;
@@ -140,7 +151,7 @@ function enhanceDefinition(image) {
   return image;
 }
 
-function containOnCanvas(image, width, height, background = 0x00000000) {
+function containOnCanvas(image, width, height, background = 0x000000ff) {
   const canvas = new Jimp({ width, height, color: background });
   const clone = image.clone();
   const scale = Math.min(width / clone.bitmap.width, height / clone.bitmap.height);
@@ -169,21 +180,14 @@ async function write(image, file) {
   }));
 }
 
-const cutout = enhanceDefinition(recolorBrandGold(removeWhiteBackground(sourceImage.clone())));
+const cutout = enhanceDefinition(eraseSubtitle(recolorBrandGold(removeWhiteBackground(sourceImage.clone()))));
 const trimmed = cutout.crop(alphaBounds(cutout, 12, 18));
 
-await write(containRaw(trimmed, 1000, 420), 'logo-rustico-web-gold.png');
+await write(containOnCanvas(trimmed, 1000, 420), 'logo-rustico-web-gold.png');
 await write(containOnCanvas(trimmed, 520, 210), 'logo-rustico-navbar-gold.png');
 await write(containOnCanvas(trimmed, 640, 260), 'logo-rustico-footer-gold.png');
 
-const ogBg = new Jimp({ width: 1200, height: 630, color: 0x07090fff });
-ogBg.scan(0, 0, ogBg.bitmap.width, ogBg.bitmap.height, function(x, y, idx) {
-  const vignette = Math.min(1, Math.hypot((x - 600) / 700, (y - 315) / 430));
-  const glow = Math.max(0, 1 - vignette) * 34;
-  this.bitmap.data[idx + 0] = clamp(7 + glow);
-  this.bitmap.data[idx + 1] = clamp(9 + glow * 0.7);
-  this.bitmap.data[idx + 2] = clamp(15 + glow * 0.18);
-});
+const ogBg = new Jimp({ width: 1200, height: 630, color: 0x000000ff });
 const ogLogo = containRaw(trimmed, 1040, 430);
 ogBg.composite(ogLogo, Math.round((1200 - ogLogo.bitmap.width) / 2), Math.round((630 - ogLogo.bitmap.height) / 2));
 await write(ogBg, 'logo-rustico-og-gold.png');
@@ -191,12 +195,12 @@ await write(ogBg, 'logo-rustico-og-gold.png');
 const iconCrop = sourceImage.clone().crop({ x: 0, y: 45, w: 520, h: 880 });
 const iconCutout = enhanceDefinition(removeWhiteBackground(iconCrop));
 const iconTrimmed = iconCutout.crop(alphaBounds(iconCutout, 12, 18));
-const faviconBg = new Jimp({ width: 512, height: 512, color: 0x0c1220ff });
+const faviconBg = new Jimp({ width: 512, height: 512, color: 0x000000ff });
 const icon = containRaw(iconTrimmed, 420, 420);
 faviconBg.composite(icon, Math.round((512 - icon.bitmap.width) / 2), Math.round((512 - icon.bitmap.height) / 2));
 await write(faviconBg, 'favicon-gold.png');
 
-const appleBg = new Jimp({ width: 180, height: 180, color: 0x0c1220ff });
+const appleBg = new Jimp({ width: 180, height: 180, color: 0x000000ff });
 const appleIcon = containRaw(iconTrimmed, 146, 146);
 appleBg.composite(appleIcon, Math.round((180 - appleIcon.bitmap.width) / 2), Math.round((180 - appleIcon.bitmap.height) / 2));
 await write(appleBg, 'apple-touch-icon-gold.png');
