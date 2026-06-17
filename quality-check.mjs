@@ -9,6 +9,7 @@ const report = {
     missingLocalReferences: 0,
     brokenHashLinks: 0,
     placeholderLinks: 0,
+    unsafeBlankLinks: 0,
     mojibakeFiles: 0,
     loremFiles: 0,
   },
@@ -46,6 +47,10 @@ for (const file of htmlFiles) {
   }).filter(Boolean);
 
   const placeholderLinks = (html.match(/href="#"/g) || []).length;
+  const unsafeBlankLinks = [...html.matchAll(/<a\b[^>]*target="_blank"[^>]*>/gi)]
+    .map(match => match[0])
+    .filter(tag => !/\brel="[^"]*\bnoopener\b[^"]*\bnoreferrer\b[^"]*"/i.test(tag)
+      && !/\brel="[^"]*\bnoreferrer\b[^"]*\bnoopener\b[^"]*"/i.test(tag));
   const hasMojibake = /(?:Ã|Â|â€|â•|â”|ðŸ|�)/.test(html);
   const hasLorem = /lorem ipsum/i.test(html);
 
@@ -59,6 +64,7 @@ for (const file of htmlFiles) {
     missingLocalReferences: [...new Set(missingLocalReferences)],
     brokenHashLinks: [...new Set(brokenHashLinks)],
     placeholderLinks,
+    unsafeBlankLinks,
     hasMojibake,
     hasLorem,
   };
@@ -67,6 +73,7 @@ for (const file of htmlFiles) {
   report.totals.missingLocalReferences += missingLocalReferences.length;
   report.totals.brokenHashLinks += brokenHashLinks.length;
   report.totals.placeholderLinks += placeholderLinks;
+  report.totals.unsafeBlankLinks += unsafeBlankLinks.length;
   if (hasMojibake) report.totals.mojibakeFiles += 1;
   if (hasLorem) report.totals.loremFiles += 1;
 }
@@ -82,6 +89,7 @@ const failed = Object.values(report.html).some(item => (
   || item.missingLocalReferences.length
   || item.brokenHashLinks.length
   || item.placeholderLinks
+  || item.unsafeBlankLinks.length
   || item.hasMojibake
   || item.hasLorem
 ));

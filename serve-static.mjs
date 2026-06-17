@@ -42,6 +42,7 @@ const securityHeaders = {
     "object-src 'none'",
     "frame-ancestors 'self'",
   ].join('; '),
+  'Cross-Origin-Opener-Policy': 'same-origin',
   'Cross-Origin-Resource-Policy': 'same-origin',
   'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
   'Referrer-Policy': 'strict-origin-when-cross-origin',
