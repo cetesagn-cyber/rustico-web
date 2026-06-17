@@ -183,9 +183,9 @@ async function write(image, file) {
 const cutout = enhanceDefinition(eraseSubtitle(recolorBrandGold(removeWhiteBackground(sourceImage.clone()))));
 const trimmed = cutout.crop(alphaBounds(cutout, 12, 18));
 
-await write(containOnCanvas(trimmed, 1000, 420), 'logo-rustico-web-gold.png');
-await write(containOnCanvas(trimmed, 520, 210), 'logo-rustico-navbar-gold.png');
-await write(containOnCanvas(trimmed, 640, 260), 'logo-rustico-footer-gold.png');
+await write(containOnCanvas(trimmed, 1000, 420, 0x00000000), 'logo-rustico-web-gold.png');
+await write(containOnCanvas(trimmed, 520, 210, 0x00000000), 'logo-rustico-navbar-gold.png');
+await write(containOnCanvas(trimmed, 640, 260, 0x00000000), 'logo-rustico-footer-gold.png');
 
 const ogBg = new Jimp({ width: 1200, height: 630, color: 0x000000ff });
 const ogLogo = containRaw(trimmed, 1040, 430);
