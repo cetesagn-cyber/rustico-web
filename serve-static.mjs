@@ -41,11 +41,13 @@ const securityHeaders = {
     "form-action 'self'",
     "object-src 'none'",
     "frame-ancestors 'self'",
+    "upgrade-insecure-requests",
   ].join('; '),
   'Cross-Origin-Opener-Policy': 'same-origin',
   'Cross-Origin-Resource-Policy': 'same-origin',
   'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
   'Referrer-Policy': 'strict-origin-when-cross-origin',
+  'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload',
   'X-Content-Type-Options': 'nosniff',
   'X-Frame-Options': 'SAMEORIGIN',
 };
@@ -56,6 +58,12 @@ function isPublicPath(requestPath) {
 
 http
   .createServer((req, res) => {
+    if (!['GET', 'HEAD'].includes(req.method || '')) {
+      res.writeHead(405, { ...securityHeaders, Allow: 'GET, HEAD' });
+      res.end('Method not allowed');
+      return;
+    }
+
     let requestPath;
     try {
       requestPath = decodeURIComponent((req.url || '/').split('?')[0]);
@@ -75,14 +83,14 @@ http
     const filePath = path.resolve(root, `.${requestPath}`);
     const relativePath = path.relative(root, filePath);
     if (relativePath.startsWith('..') || path.isAbsolute(relativePath)) {
-      res.writeHead(403);
+      res.writeHead(403, securityHeaders);
       res.end('Forbidden');
       return;
     }
 
     fs.readFile(filePath, (error, data) => {
       if (error) {
-        res.writeHead(404);
+        res.writeHead(404, securityHeaders);
         res.end('Not found');
         return;
       }
@@ -97,7 +105,7 @@ http
         'Cache-Control': cacheControl,
         'Content-Type': types[ext] || 'application/octet-stream',
       });
-      res.end(data);
+      res.end(req.method === 'HEAD' ? undefined : data);
     });
   })
   .listen(port, '127.0.0.1', () => {

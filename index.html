@@ -111,9 +111,10 @@
     body {
       font-family: var(--ff-body);
       background:
+        radial-gradient(circle at 18% 0%, rgba(43,62,104,.34), transparent 360px),
         linear-gradient(180deg, rgba(255,255,255,.018), transparent 220px),
         repeating-linear-gradient(135deg, rgba(255,255,255,.018) 0 1px, transparent 1px 12px),
-        linear-gradient(180deg, #060A11 0%, #0B1421 34%, #09111D 68%, #05070C 100%);
+        linear-gradient(180deg, #10213B 0%, #0F1A30 34%, #0B1528 68%, #09111D 100%);
       color: var(--white);
       overflow-x: hidden;
       line-height: 1.7;
@@ -441,7 +442,7 @@
       align-items: center;
       overflow: hidden;
       background:
-        linear-gradient(120deg, #05070C 0%, #0A111D 48%, #13110B 100%);
+        linear-gradient(120deg, #0B1528 0%, #10213B 48%, #172642 100%);
     }
     .hero__bg {
       position: absolute; inset: 0;
@@ -1301,7 +1302,7 @@
       flex-direction: column;
       box-shadow: 0 30px 90px rgba(0,0,0,.48);
     }
-    .booking__form-box > div#cal-booking {
+    .booking__form-box > #cal-booking {
       flex: 1;
       min-height: 620px;
     }
@@ -1409,7 +1410,7 @@
     .footer {
       background:
         radial-gradient(circle at 10% 0%, rgba(211,174,82,.08), transparent 28%),
-        linear-gradient(180deg, #07090f 0%, #05070c 100%);
+        linear-gradient(180deg, #0E1726 0%, #0B1528 100%);
       border-top: 1px solid rgba(211,174,82,.22);
       position: relative;
       overflow: hidden;
@@ -1741,24 +1742,71 @@
        HOW IT WORKS — ¿CÓMO FUNCIONA?
     ═══════════════════════════════════════════════════ */
     .how-it-works {
-      padding: 120px 0;
-      background: var(--dark-2);
+      padding: 124px 0 132px;
+      background:
+        radial-gradient(circle at 50% 18%, rgba(43,62,104,.34), transparent 36%),
+        radial-gradient(circle at 12% 78%, rgba(211,174,82,.08), transparent 28%),
+        linear-gradient(180deg, #0B1528 0%, #0E1726 54%, #0B1528 100%);
       position: relative;
       overflow: hidden;
     }
-    .how-it-works__bg {
+    .how-it-works::before {
+      content: '';
       position: absolute;
       inset: 0;
-      z-index: 0;
-      background: url('Rustico/Rusticofoto2.jpeg') center / cover no-repeat;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.035), transparent 18%, transparent 82%, rgba(255,255,255,.025)),
+        repeating-linear-gradient(135deg, rgba(255,255,255,.022) 0 1px, transparent 1px 18px);
+      opacity: .55;
+    }
+    .how-it-works__bg {
+      position: relative;
+      width: min(960px, 100%);
+      aspect-ratio: 16 / 9;
+      margin: 0 auto 68px;
+      z-index: 2;
+      overflow: hidden;
+      border: 1px solid rgba(211,174,82,.34);
+      border-radius: 10px;
+      background: #0B1528 url('Rustico/Rusticofoto2.jpeg') center / cover no-repeat;
+      box-shadow:
+        0 34px 88px rgba(0,0,0,.5),
+        0 0 0 1px rgba(248,249,252,.06) inset,
+        0 0 54px rgba(43,62,104,.28);
+    }
+    .how-it-works__bg::before {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      z-index: 2;
+      pointer-events: none;
+      border: 1px solid rgba(248,249,252,.08);
+      border-radius: 6px;
+    }
+    .how-it-works__bg::after {
+      content: 'Experiencia Rústico';
+      position: absolute;
+      left: 22px;
+      bottom: 20px;
+      z-index: 3;
+      padding: 8px 12px;
+      background: rgba(7,9,15,.62);
+      border: 1px solid rgba(211,174,82,.32);
+      color: var(--gold-light);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+      backdrop-filter: blur(10px);
     }
     .how-it-works__bg video {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
-      filter: brightness(1.04) contrast(1.16) saturate(1.08);
-      transform: translateZ(0) scale(1.015);
+      filter: brightness(1.1) contrast(1.08) saturate(1.14);
+      transform: translateZ(0);
       backface-visibility: hidden;
       will-change: transform;
     }
@@ -1767,24 +1815,24 @@
       inset: 0;
       z-index: 1;
       background:
-        linear-gradient(108deg, rgba(11,21,40,.54) 0%, rgba(14,23,38,.34) 58%, rgba(5,7,12,.22) 100%),
-        linear-gradient(to bottom, rgba(14,23,38,.05), rgba(17,28,45,.54));
+        linear-gradient(to bottom, rgba(14,23,38,.04), rgba(17,28,45,.44));
       pointer-events: none;
     }
     .how-it-works > .container {
       position: relative;
-      z-index: 2;
+      z-index: 3;
     }
     .how-it-works__header {
       text-align: center;
-      margin-bottom: 72px;
+      margin-bottom: 44px;
     }
     .how-it-works__header .section-eyebrow { justify-content: center; }
-    .how-it-works__header .section-sub { margin: 0 auto; max-width: 520px; }
+    .how-it-works__header .section-sub { margin: 0 auto; max-width: 560px; }
     .how-it-works__steps {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       position: relative;
+      gap: 18px;
     }
     .how-it-works__steps::after {
       content: '';
@@ -1795,32 +1843,43 @@
       height: 1.5px;
       background: linear-gradient(90deg, transparent, rgba(248,249,252,.2) 50%, transparent);
       opacity: 1;
+      z-index: 0;
     }
     .step {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 0 32px;
+      min-height: 100%;
+      padding: 34px 28px 30px;
+      background: rgba(248,249,252,.055);
+      border: 1px solid rgba(248,249,252,.11);
+      border-radius: 8px;
+      box-shadow: 0 22px 52px rgba(0,0,0,.22);
+      backdrop-filter: blur(12px);
+      position: relative;
+      z-index: 1;
     }
     .step__bubble {
       width: 104px; height: 104px;
       display: flex; align-items: center; justify-content: center;
-      background: rgba(248,249,252,.05);
-      border: 2px solid rgba(248,249,252,.15);
+      background: rgba(11,21,40,.82);
+      border: 2px solid rgba(211,174,82,.3);
       border-radius: 50%;
       color: var(--white);
       margin-bottom: 28px;
       position: relative;
       z-index: 1;
       animation: stepPulse 4s ease-in-out infinite;
-      transition: border-color .4s var(--ease), transform .4s var(--ease);
+      box-shadow: 0 0 0 8px rgba(211,174,82,.045), 0 18px 38px rgba(0,0,0,.22);
+      transition: border-color .4s var(--ease), transform .4s var(--ease), background .4s var(--ease);
     }
     .step__bubble:hover {
-      border-color: rgba(248,249,252,.3);
+      background: rgba(211,174,82,.15);
+      border-color: rgba(211,174,82,.72);
       transform: translateY(-6px) scale(1.05);
       animation: none;
-      box-shadow: 0 14px 40px rgba(0,0,0,.5), 0 0 32px rgba(248,249,252,.1);
+      box-shadow: 0 14px 40px rgba(0,0,0,.42), 0 0 32px rgba(211,174,82,.18);
     }
     .step:nth-child(2) .step__bubble { animation-delay: 1.3s; }
     .step:nth-child(3) .step__bubble { animation-delay: 2.6s; }
@@ -2059,6 +2118,10 @@
       /* How it works */
       .how-it-works__steps::after { display: none; }
       .how-it-works { padding: 90px 0; }
+      .how-it-works__bg {
+        width: min(820px, 100%);
+        margin-bottom: 52px;
+      }
 
       /* Advantages */
       .advantages { padding: 100px 0; }
@@ -2145,6 +2208,10 @@
 
       /* How it works */
       .how-it-works__steps { grid-template-columns: 1fr; gap: 48px; }
+      .how-it-works__bg {
+        width: 100%;
+        margin-bottom: 44px;
+      }
       .step__bubble { width: 88px; height: 88px; }
 
       /* Advantages */
@@ -2819,11 +2886,6 @@
      HOW IT WORKS
 ══════════════════════════════════════════════════ -->
 <section class="how-it-works" aria-labelledby="how-title">
-  <div class="how-it-works__bg" aria-hidden="true">
-    <video autoplay muted loop playsinline preload="metadata" poster="Rustico/Rusticofoto2.jpeg">
-      <source src="Rustico/Videos/WhatsApp%20Video%202026-06-03%20at%206.53.10%20PM.mp4" type="video/mp4">
-    </video>
-  </div>
   <div class="how-it-works__overlay" aria-hidden="true"></div>
   <div class="container">
     <div class="how-it-works__header sr">
@@ -2834,6 +2896,12 @@
       </div>
       <h2 class="section-title" id="how-title">¿Cómo <em>Funciona?</em></h2>
       <p class="section-sub">Agendar tu cita en Rústico es increíblemente simple. Solo 3 pasos y tu look está asegurado.</p>
+    </div>
+
+    <div class="how-it-works__bg" aria-hidden="true">
+      <video autoplay muted loop playsinline preload="metadata" poster="Rustico/Rusticofoto2.jpeg">
+        <source src="Rustico/Videos/rustico-video-hero-1080p.mp4" type="video/mp4">
+      </video>
     </div>
 
     <div class="how-it-works__steps">
@@ -2879,7 +2947,7 @@
              alt="Interior de Rústico Barbería — barberos trabajando en Bogotá" />
         <div class="about__video-frame" aria-hidden="true">
           <video class="about__video" autoplay muted loop playsinline preload="metadata" poster="Rustico/Rusticofoto3.jpeg">
-            <source src="Rustico/Videos/WhatsApp%20Video%202026-06-03%20at%206.53.07%20PM.mp4" type="video/mp4">
+            <source src="Rustico/Videos/rustico-video-ambiente-1080p.mp4" type="video/mp4">
           </video>
         </div>
         <div class="about__year-badge" aria-hidden="true">
@@ -3285,7 +3353,7 @@
       <!-- 2 — Fade dorado: resultado de corte y colorimetría (span 4) -->
       <div class="gallery__item" role="listitem">
         <video autoplay muted loop playsinline preload="metadata" poster="Rustico/gallery/g2.jpg" aria-label="Video de corte y ambiente en Rústico Barber">
-          <source src="Rustico/Videos/WhatsApp%20Video%202026-06-03%20at%206.53.07%20PM.mp4" type="video/mp4">
+          <source src="Rustico/Videos/rustico-video-ambiente-1080p.mp4" type="video/mp4">
         </video>
         <span class="gallery__video-badge">En vivo</span>
         <div class="gallery__item-overlay" aria-hidden="true">
@@ -3304,7 +3372,7 @@
       <!-- 4 — Afeitado clásico con espuma (span 3) -->
       <div class="gallery__item" role="listitem">
         <video autoplay muted loop playsinline preload="metadata" poster="Rustico/gallery/g4.jpg" aria-label="Video de experiencia premium en Rústico Barber">
-          <source src="Rustico/Videos/WhatsApp%20Video%202026-06-03%20at%206.53.10%20PM.mp4" type="video/mp4">
+          <source src="Rustico/Videos/rustico-video-hero-1080p.mp4" type="video/mp4">
         </video>
         <span class="gallery__video-badge">Ritual</span>
         <div class="gallery__item-overlay" aria-hidden="true">
@@ -3624,13 +3692,37 @@
         </a>
       </div>
 
-      <!-- Right: form -->
-      <!-- ══ CAL.COM EMBED ══
-           Una vez tengas tu cuenta Cal.com lista, reemplaza "TU-EQUIPO/reservar"
-           en el script al final del body por tu link real (ej: "rusticobarbershop/equipo")
-      ══════════════════════════════════════════════════ -->
       <div class="booking__form-box sr right">
-        <div id="cal-booking"></div>
+        <form id="cal-booking" novalidate>
+          <div style="padding:40px 36px;display:flex;flex-direction:column;gap:0;height:100%;">
+            <h3 class="booking__form-title">Solicitar Cita</h3>
+            <div class="form-group">
+              <input id="dsk-nombre" type="text" placeholder="Nombre completo" autocomplete="name" required maxlength="80" />
+            </div>
+            <div class="form-group">
+              <select id="dsk-servicio" required>
+                <option value="" disabled selected>- Selecciona un servicio -</option>
+                <option>Corte de Cabello - $55.000</option>
+                <option>Arreglo de Barba - $50.000</option>
+                <option>Combo Corte + Barba - $99.000</option>
+                <option>Keratina &amp; Colorimetría - desde $70.000</option>
+                <option>Spa Facial (6 mascarillas) - $200.000</option>
+                <option>Servicio VIP - $300.000</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><input id="dsk-fecha" type="date" aria-label="Fecha deseada" /></div>
+              <div class="form-group"><input id="dsk-hora" type="time" aria-label="Hora deseada" /></div>
+            </div>
+            <div class="form-group">
+              <textarea id="dsk-nota" rows="3" placeholder="Nota adicional (opcional)" maxlength="240"></textarea>
+            </div>
+            <button class="form-submit" type="submit">
+              Reservar por WhatsApp
+            </button>
+            <p style="font-size:11.5px;color:var(--gray);margin-top:12px;text-align:center;">Te confirmamos disponibilidad por WhatsApp</p>
+          </div>
+        </form>
       </div>
 
     </div>
@@ -3920,45 +4012,32 @@
   }, { threshold: 0.5 });
   counterEls.forEach(el => counterObs.observe(el));
 
-  /* ── Reserva via WhatsApp (formulario de escritorio) ── */
-  (function() {
-    const box = document.getElementById('cal-booking');
-    if (!box) return;
-    box.innerHTML = `
-      <div style="padding:40px 36px;display:flex;flex-direction:column;gap:0;height:100%;">
-        <h3 style="font-family:var(--ff-display);font-size:24px;font-weight:700;margin-bottom:24px;color:var(--white);">Solicitar Cita</h3>
-        <div class="form-group">
-          <input id="dsk-nombre" type="text" placeholder="Nombre completo" autocomplete="name" />
-        </div>
-        <div class="form-group">
-          <select id="dsk-servicio">
-            <option value="" disabled selected>— Selecciona un servicio —</option>
-            <option>Corte de Cabello — $55.000</option>
-            <option>Arreglo de Barba — $50.000</option>
-            <option>Combo Corte + Barba — $99.000</option>
-            <option>Keratina &amp; Colorimetría — desde $70.000</option>
-            <option>Spa Facial (6 mascarillas) — $200.000</option>
-            <option>Servicio VIP — $300.000</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <div class="form-group"><input id="dsk-fecha" type="date" /></div>
-          <div class="form-group"><input id="dsk-hora" type="time" /></div>
-        </div>
-        <div class="form-group">
-          <textarea id="dsk-nota" rows="3" placeholder="Nota adicional (opcional)"></textarea>
-        </div>
-        <button class="form-submit" onclick="enviarReservaWA()">
-          Reservar por WhatsApp
-        </button>
-        <p style="font-size:11.5px;color:var(--gray);margin-top:12px;text-align:center;">Te confirmamos disponibilidad por WhatsApp</p>
-      </div>`;
+  const WHATSAPP_BOOKING_URL = 'https://wa.me/573133930398?text=';
+  const todayISO = new Date().toISOString().slice(0, 10);
+  document.querySelectorAll('input[type="date"]').forEach(input => {
+    input.min = todayISO;
+  });
+  document.getElementById('dsk-servicio')?.addEventListener('change', function() {
+    this.classList.add('filled');
+  });
+  document.getElementById('cal-booking')?.addEventListener('submit', event => {
+    event.preventDefault();
+    enviarReservaWA();
+  });
 
-    /* Marcar select como filled al elegir */
-    document.getElementById('dsk-servicio').addEventListener('change', function() {
-      this.classList.add('filled');
-    });
-  })();
+  function markInvalid(el) {
+    if (!el) return;
+    el.style.borderColor = 'var(--gold)';
+    el.focus();
+  }
+
+  function resetFieldState(el) {
+    if (el) el.style.borderColor = '';
+  }
+
+  function openWhatsAppBooking(message) {
+    window.open(WHATSAPP_BOOKING_URL + encodeURIComponent(message), '_blank', 'noopener');
+  }
 
   window.enviarReservaWA = function() {
     const nombreEl = document.getElementById('dsk-nombre');
@@ -3972,25 +4051,26 @@
     const hora     = horaEl?.value || '';
     const nota     = (notaEl?.value || '').trim();
 
-    if (!nombre) { nombreEl?.focus(); if (nombreEl) nombreEl.style.borderColor = 'var(--gold)'; return; }
-    if (!servicio) { servicioEl?.focus(); if (servicioEl) servicioEl.style.borderColor = 'var(--gold)'; return; }
+    [nombreEl, servicioEl, fechaEl, horaEl, notaEl].forEach(resetFieldState);
+    if (!nombre) { markInvalid(nombreEl); return; }
+    if (!servicio) { markInvalid(servicioEl); return; }
+    if (fecha && fecha < todayISO) { markInvalid(fechaEl); return; }
 
     const fechaFmt = fecha ? new Date(fecha + 'T12:00').toLocaleDateString('es-CO', { weekday:'long', day:'numeric', month:'long' }) : 'por confirmar';
     const horaFmt  = hora || 'por confirmar';
 
-    const msg = encodeURIComponent(
-      `Hola Rústico Barber 👋\n\n` +
+    const msg =
+      `Hola Rústico Barber\n\n` +
       `Quiero reservar una cita:\n` +
-      `• Servicio: ${servicio}\n` +
-      `• Fecha: ${fechaFmt}\n` +
-      `• Hora: ${horaFmt}\n` +
-      `• Nombre: ${nombre}\n` +
-      (nota ? `• Nota: ${nota}\n` : '') +
-      `\n¿Hay disponibilidad? 🙏`
-    );
+      `- Servicio: ${servicio}\n` +
+      `- Fecha: ${fechaFmt}\n` +
+      `- Hora: ${horaFmt}\n` +
+      `- Nombre: ${nombre}\n` +
+      (nota ? `- Nota: ${nota}\n` : '') +
+      `\nHay disponibilidad?`;
     trackEvent('desktop_booking_submit', { service_name: servicio, booking_source: 'desktop_form' });
     trackEvent('whatsapp_click', { cta_location: 'desktop_booking_form', service_name: servicio });
-    window.open('https://wa.me/573133930398?text=' + msg, '_blank', 'noopener');
+    openWhatsAppBooking(msg);
   };
 
   /* ── Smooth anchor scroll ── */
@@ -4105,7 +4185,7 @@
     <div class="book-modal__divider"></div>
 
     <label class="book-modal__label" for="bookNombre">Nombre Completo</label>
-    <input class="book-modal__input" type="text" id="bookNombre" placeholder="Tu nombre" autocomplete="name" />
+    <input class="book-modal__input" type="text" id="bookNombre" placeholder="Tu nombre" autocomplete="name" required maxlength="80" />
 
     <div class="book-modal__row">
       <div>
@@ -4212,25 +4292,22 @@
     const servicio = nameEl?.textContent || 'Servicio';
     const precio   = priceEl?.textContent || '';
 
-    if (!nombre) {
-      nombreEl?.focus();
-      if (nombreEl) nombreEl.style.borderColor = 'var(--gold)';
-      return;
-    }
+    [nombreEl, fechaEl, horaEl].forEach(resetFieldState);
+    if (!nombre) { markInvalid(nombreEl); return; }
+    if (fecha && fecha < todayISO) { markInvalid(fechaEl); return; }
 
     const fechaFmt = fecha ? new Date(fecha + 'T12:00').toLocaleDateString('es-CO', { weekday:'long', day:'numeric', month:'long' }) : 'por confirmar';
     const horaFmt  = hora  || 'por confirmar';
 
-    const msg = encodeURIComponent(
-      `Hola Rústico Barber 👋\n\n` +
+    const msg =
+      `Hola Rústico Barber\n\n` +
       `Quiero reservar una cita:\n` +
-      `• Servicio: ${servicio}\n` +
-      `• Precio: ${precio}\n` +
-      `• Fecha: ${fechaFmt}\n` +
-      `• Hora: ${horaFmt}\n` +
-      `• Nombre: ${nombre}\n\n` +
-      `¿Hay disponibilidad? 🙏`
-    );
+      `- Servicio: ${servicio}\n` +
+      `- Precio: ${precio}\n` +
+      `- Fecha: ${fechaFmt}\n` +
+      `- Hora: ${horaFmt}\n` +
+      `- Nombre: ${nombre}\n\n` +
+      `Hay disponibilidad?`;
 
     trackEvent('booking_whatsapp_submit', {
       service_name: servicio,
@@ -4238,7 +4315,7 @@
       booking_source: 'booking_modal'
     });
     trackEvent('whatsapp_click', { cta_location: 'booking_modal', service_name: servicio });
-    window.open('https://wa.me/573133930398?text=' + msg, '_blank', 'noopener');
+    openWhatsAppBooking(msg);
     cerrarReserva();
   }
 </script>

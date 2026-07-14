@@ -15,6 +15,7 @@ server-*.log
 npm-debug.log*
 
 # Backups and migration packages
+_backups/
 *.backup-*.html
 index.backup-*.html
 MIGRACION_RUSTICO_*/
