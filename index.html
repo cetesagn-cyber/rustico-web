@@ -938,7 +938,7 @@
     .gallery__grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: 290px 290px;
+      grid-template-rows: 290px 290px 260px;
       gap: 12px;
     }
     .gallery__item:nth-child(1) { grid-column: span 5; grid-row: span 2; }
@@ -947,6 +947,7 @@
     .gallery__item:nth-child(4) { grid-column: span 3; }
     .gallery__item:nth-child(5) { grid-column: span 2; }
     .gallery__item:nth-child(6) { grid-column: span 2; }
+    .gallery__item:nth-child(7) { grid-column: span 12; }
 
     /* Focus points por foto */
     .gallery__item:nth-child(1) img { object-position: center 22%; }
@@ -955,6 +956,7 @@
     .gallery__item:nth-child(4) img { object-position: center 30%; }
     .gallery__item:nth-child(5) img { object-position: center 38%; }
     .gallery__item:nth-child(6) img { object-position: center 22%; }
+    .gallery__item:nth-child(7) img { object-position: center 48%; }
     .gallery__item {
       overflow: hidden;
       border-radius: 2px;
@@ -3397,7 +3399,15 @@
         </div>
       </div>
 
-    </div>
+    
+
+      <!-- 7 - Ambiente real de barberia con equipo atendiendo clientes (fila completa) -->
+      <div class="gallery__item" role="listitem">
+        <img src="Rustico/gallery/g7.jpg" alt="Ambiente real de Rustico Barber con barberos atendiendo clientes en Bogota" loading="lazy" />
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <svg width="36" height="36" fill="white" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+        </div>
+      </div></div>
   </div>
 </section>
 
