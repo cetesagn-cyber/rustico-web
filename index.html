@@ -442,12 +442,13 @@
       align-items: center;
       overflow: hidden;
       background:
+        radial-gradient(circle at 18% 18%, rgba(43,62,104,.44), transparent 34%),
         linear-gradient(120deg, #0B1528 0%, #10213B 48%, #172642 100%);
     }
     .hero__bg {
       position: absolute; inset: 0;
       background:
-        linear-gradient(90deg, rgba(5,7,12,.08), rgba(5,7,12,0)),
+        linear-gradient(90deg, rgba(11,21,40,.18), rgba(16,33,59,0)),
         url('Rustico/Rusticofoto2.jpeg') center 28% / cover no-repeat;
       filter: brightness(1.28) contrast(1.04) saturate(1.08);
       transform: scale(1.045);
@@ -459,16 +460,17 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(100deg, rgba(5,7,12,.72) 0%, rgba(7,12,20,.46) 34%, rgba(9,17,29,.22) 62%, rgba(5,7,12,.10) 100%),
-        linear-gradient(180deg, rgba(211,174,82,.06), transparent 36%, rgba(5,7,12,.34) 100%);
+        linear-gradient(100deg, rgba(11,21,40,.76) 0%, rgba(16,33,59,.52) 34%, rgba(23,38,66,.26) 62%, rgba(11,21,40,.10) 100%),
+        linear-gradient(180deg, rgba(211,174,82,.06), rgba(16,33,59,.04) 36%, rgba(11,21,40,.42) 100%);
       mix-blend-mode: normal;
     }
     .hero__bg.loaded { transform: scale(1); }
     .hero__overlay {
       position: absolute; inset: 0;
       background:
-        linear-gradient(90deg, rgba(5,7,12,.66) 0%, rgba(5,7,12,.30) 42%, rgba(5,7,12,.05) 100%),
-        linear-gradient(180deg, rgba(5,7,12,.04) 0%, rgba(5,7,12,0) 50%, rgba(5,7,12,.58) 100%);
+        radial-gradient(circle at 72% 18%, rgba(43,62,104,.24), transparent 34%),
+        linear-gradient(90deg, rgba(11,21,40,.68) 0%, rgba(16,33,59,.36) 42%, rgba(23,38,66,.08) 100%),
+        linear-gradient(180deg, rgba(11,21,40,.08) 0%, rgba(16,33,59,0) 50%, rgba(11,21,40,.64) 100%);
     }
     .hero::after {
       display: none;
@@ -476,7 +478,7 @@
     .hero__fade-bottom {
       position: absolute; bottom:0; left:0; right:0;
       height: 220px;
-      background: linear-gradient(to top, var(--dark), transparent);
+      background: linear-gradient(to top, #0B1528 0%, rgba(11,21,40,.78) 44%, transparent 100%);
     }
     .hero__content {
       position: relative;
@@ -547,7 +549,7 @@
     .hero__stat {
       padding: 26px 34px;
       background:
-        linear-gradient(180deg, rgba(17,28,45,.92), rgba(5,7,12,.88));
+        linear-gradient(180deg, rgba(20,32,51,.94), rgba(11,21,40,.90));
       border: 1px solid rgba(211,174,82,.22);
       backdrop-filter: blur(14px);
       text-align: center;
