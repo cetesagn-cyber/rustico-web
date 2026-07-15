@@ -90,6 +90,11 @@
       --dark-3:      #142033;
       --dark-card:   #111C2D;
       --border:      #253957;
+      --surface-0:   #080D16;
+      --surface-1:   #0B1528;
+      --surface-2:   #0E1726;
+      --surface-3:   #111A2A;
+      --surface-4:   #142033;
 
       /* ── Texto ──────────────────────────────────────── */
       --white:       #F8F9FC;
@@ -114,7 +119,7 @@
         radial-gradient(circle at 18% 0%, rgba(43,62,104,.34), transparent 360px),
         linear-gradient(180deg, rgba(255,255,255,.018), transparent 220px),
         repeating-linear-gradient(135deg, rgba(255,255,255,.018) 0 1px, transparent 1px 12px),
-        linear-gradient(180deg, #10213B 0%, #0F1A30 34%, #0B1528 68%, #09111D 100%);
+        linear-gradient(180deg, var(--surface-4) 0%, var(--surface-2) 34%, var(--surface-1) 68%, var(--surface-0) 100%);
       color: var(--white);
       overflow-x: hidden;
       line-height: 1.7;
@@ -620,7 +625,7 @@
       padding: 140px 0;
       background:
         linear-gradient(180deg, rgba(211,174,82,.045), transparent 150px),
-        linear-gradient(135deg, #09111D 0%, #0E1726 52%, #080C14 100%);
+        linear-gradient(135deg, var(--surface-1) 0%, var(--surface-2) 52%, var(--surface-0) 100%);
       position: relative;
       overflow: hidden;
     }
@@ -776,8 +781,8 @@
       padding: 140px 0;
       background:
         radial-gradient(circle at 14% 12%, rgba(211,174,82,.10), transparent 30%),
-        radial-gradient(circle at 86% 0%, rgba(40,67,112,.32), transparent 34%),
-        linear-gradient(180deg, #0b121f 0%, #111a2a 48%, #0a0f19 100%);
+        radial-gradient(circle at 86% 0%, rgba(43,62,104,.24), transparent 34%),
+        linear-gradient(180deg, var(--surface-1) 0%, var(--surface-3) 48%, var(--surface-0) 100%);
       position: relative;
       overflow: hidden;
     }
@@ -895,7 +900,8 @@
     .gallery {
       padding: 140px 0;
       background:
-        linear-gradient(180deg, #080d16 0%, #101827 44%, #080d16 100%);
+        radial-gradient(circle at 78% 10%, rgba(43,62,104,.16), transparent 32%),
+        linear-gradient(180deg, var(--surface-0) 0%, var(--surface-2) 44%, var(--surface-0) 100%);
       position: relative;
       overflow: hidden;
     }
@@ -1075,7 +1081,7 @@
       padding: 140px 0;
       background:
         radial-gradient(circle at 8% 20%, rgba(211,174,82,.09), transparent 28%),
-        linear-gradient(135deg, #111a2a 0%, #09111e 58%, #121927 100%);
+        linear-gradient(135deg, var(--surface-3) 0%, var(--surface-1) 58%, var(--surface-2) 100%);
       position: relative;
       overflow: hidden;
     }
@@ -1152,7 +1158,7 @@
       padding: 140px 0;
       background:
         radial-gradient(circle at 86% 20%, rgba(211,174,82,.09), transparent 30%),
-        linear-gradient(180deg, #080d16 0%, #101827 48%, #090e17 100%);
+        linear-gradient(180deg, var(--surface-0) 0%, var(--surface-2) 48%, var(--surface-0) 100%);
       position: relative;
       overflow: hidden;
     }
@@ -1249,7 +1255,7 @@
       padding: 140px 0;
       background:
         radial-gradient(circle at 16% 24%, rgba(211,174,82,.12), transparent 32%),
-        linear-gradient(135deg, #09111f 0%, #14213a 52%, #080c15 100%);
+        linear-gradient(135deg, var(--surface-1) 0%, var(--surface-4) 52%, var(--surface-0) 100%);
       position: relative;
       overflow: hidden;
     }
@@ -1414,7 +1420,7 @@
     .footer {
       background:
         radial-gradient(circle at 10% 0%, rgba(211,174,82,.08), transparent 28%),
-        linear-gradient(180deg, #0E1726 0%, #0B1528 100%);
+        linear-gradient(180deg, var(--surface-2) 0%, var(--surface-1) 55%, var(--surface-0) 100%);
       border-top: 1px solid rgba(211,174,82,.22);
       position: relative;
       overflow: hidden;
@@ -1674,7 +1680,7 @@
       background: var(--border);
     }
     .price-cat {
-      background: var(--dark-3);
+      background: linear-gradient(180deg, rgba(20,32,51,.96), rgba(14,23,38,.98));
       padding: 34px 28px 28px;
     }
     .price-cat__title {
@@ -1748,9 +1754,9 @@
     .how-it-works {
       padding: 124px 0 132px;
       background:
-        radial-gradient(circle at 50% 18%, rgba(43,62,104,.34), transparent 36%),
+        radial-gradient(circle at 50% 18%, rgba(43,62,104,.22), transparent 36%),
         radial-gradient(circle at 12% 78%, rgba(211,174,82,.08), transparent 28%),
-        linear-gradient(180deg, #0B1528 0%, #0E1726 54%, #0B1528 100%);
+        linear-gradient(180deg, var(--surface-1) 0%, var(--surface-2) 54%, var(--surface-1) 100%);
       position: relative;
       overflow: hidden;
     }
@@ -1921,7 +1927,7 @@
       padding: 130px 0;
       background:
         radial-gradient(circle at 52% 42%, rgba(211,174,82,.08), transparent 34%),
-        linear-gradient(135deg, #090f19 0%, #121b2b 48%, #080d16 100%);
+        linear-gradient(135deg, var(--surface-0) 0%, var(--surface-3) 48%, var(--surface-0) 100%);
       position: relative;
       overflow: hidden;
     }
@@ -2316,7 +2322,7 @@
        MAP SECTION
     ═══════════════════════════════════════════════════ */
     .map-section {
-      background: var(--dark-2);
+      background: linear-gradient(180deg, var(--surface-2), var(--surface-1));
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
