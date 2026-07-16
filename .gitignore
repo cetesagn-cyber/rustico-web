@@ -21,6 +21,7 @@ index.backup-*.html
 MIGRACION_RUSTICO_*/
 MIGRACION_RUSTICO_FULL_*/
 MIGRACION_RUSTICO_PORTABLE_*/
+RUSTICO_WEB_GITHUB_LIMPIO_*/
 
 # Local/private workflow exports
 n8n-workflows/
