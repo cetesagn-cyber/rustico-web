@@ -1,23 +1,52 @@
 # Dependencies
 node_modules/
 
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
 # Local/editor state
 .abacusai/
 .claude/
 .agents/
 .codex/
+.vscode/
+.idea/
 .DS_Store
 Thumbs.db
+desktop.ini
+~$*
 
 # Logs and runtime output
 *.log
 server-*.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# Backups and migration packages
+# Cache / test output
+.cache/
+.parcel-cache/
+.turbo/
+coverage/
+.nyc_output/
+
+# Build / deploy local state
+dist/
+build/
+.vercel/
+.netlify/
+
+# Backups, exports and migration packages
 _backups/
 *.backup-*.html
 index.backup-*.html
+*.zip
+*.tar
+*.tar.gz
+*.7z
 MIGRACION_RUSTICO_*/
 MIGRACION_RUSTICO_FULL_*/
 MIGRACION_RUSTICO_PORTABLE_*/
