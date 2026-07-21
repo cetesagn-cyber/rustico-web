@@ -2,6 +2,8 @@
 
 Sitio web estatico para Rustico Barber & Concept Shop en Bogota.
 
+Sitio publicado: https://cetesagn-cyber.github.io/rustico-web/
+
 ## Ejecutar localmente
 
 ```bash
@@ -24,32 +26,16 @@ npm run quality
 
 La validacion revisa archivos requeridos, titulos, meta descriptions, scripts inline, IDs duplicados, assets locales, enlaces internos, favicon y texto roto por codificacion. El detalle de auditoria queda en `QUALITY_CHECKLIST.md`.
 
-## Publicar en GitHub Pages
+## Publicacion en GitHub Pages
 
-1. Crear un repositorio en GitHub.
-2. Subir los archivos del proyecto respetando `.gitignore`.
-3. En GitHub: `Settings > Pages`.
-4. Seleccionar `Deploy from a branch`.
-5. Branch: `main`.
-6. Folder: `/root`.
-7. Guardar y esperar la URL de GitHub Pages.
+El repositorio de produccion es `cetesagn-cyber/rustico-web` y se publica desde la rama `main` en la carpeta `/root`.
 
-## Ajustes finales obligatorios
+## Datos administrativos pendientes
 
-Antes de indexar en Google o conectar Search Console, reemplazar `http://127.0.0.1:8090` por la URL real de produccion en:
-
-- `index.html`
-- `privacidad.html`
-- `cookies.html`
-- `terminos.html`
-- `robots.txt`
-- `sitemap.xml`
-
-Tambien completar en paginas legales:
+Antes de cerrar la revision legal o activar medicion, confirmar:
 
 - NIT o identificacion oficial.
 - Correo legal/corporativo.
-- Dominio final.
 - ID de GA4 o GTM si se va a medir con Google.
 
 ## Archivos principales

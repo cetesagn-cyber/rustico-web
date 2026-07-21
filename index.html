@@ -1329,6 +1329,14 @@
       margin-bottom: 28px;
     }
     .form-group { margin-bottom: 16px; }
+    .form-label {
+      display: block;
+      margin: 0 0 7px;
+      color: var(--light);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .7px;
+    }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .form-group input,
     .form-group select,
@@ -3035,6 +3043,8 @@
   </div>
 </header>
 
+<main>
+
 <!-- ═══════════════════════════════════════════════
      HERO
 ══════════════════════════════════════════════════ -->
@@ -3439,8 +3449,8 @@
           <span class="step__num">01</span>
           <svg width="42" height="42" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="m20 4-14.5 8.5M20 20 5.5 11.5"/></svg>
         </div>
-        <div class="step__name">Elige Servicio y Barbero</div>
-        <p class="step__desc">Selecciona el servicio con precio y duración exacta, y el barbero de tu preferencia o cualquier disponible.</p>
+        <div class="step__name">Elige tu Servicio</div>
+        <p class="step__desc">Selecciona el servicio que necesitas y consulta de antemano su precio y duración estimada.</p>
       </div>
       <div class="step sr">
         <div class="step__bubble">
@@ -3448,15 +3458,15 @@
           <svg width="42" height="42" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
         </div>
         <div class="step__name">Escoge Fecha y Hora</div>
-        <p class="step__desc">Consulta la disponibilidad en tiempo real y reserva el horario que mejor se adapte a tu agenda.</p>
+        <p class="step__desc">Indica por WhatsApp la fecha y hora que prefieres para que nuestro equipo revise la disponibilidad.</p>
       </div>
       <div class="step sr">
         <div class="step__bubble">
           <span class="step__num">03</span>
           <svg width="42" height="42" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m22 4-10 10.01-3-3"/></svg>
         </div>
-        <div class="step__name">Confirma y Recibe Recordatorio</div>
-        <p class="step__desc">Confirmación inmediata + recordatorio automático por WhatsApp 24h y 2h antes de tu cita.</p>
+        <div class="step__name">Recibe la Confirmación</div>
+        <p class="step__desc">Nuestro equipo te responde por WhatsApp y confirma personalmente el horario de tu cita.</p>
       </div>
     </div>
   </div>
@@ -3756,11 +3766,11 @@
     <div class="advantages__header sr">
       <div class="section-eyebrow">
         <div class="section-eyebrow__line"></div>
-        <span class="section-eyebrow__text">Sistema de Reservas</span>
+        <span class="section-eyebrow__text">Reserva por WhatsApp</span>
         <div class="section-eyebrow__line"></div>
       </div>
-      <h2 class="section-title" id="adv-title">10 Razones para Reservar <br>en <em>Línea</em></h2>
-      <p class="section-sub">Todo lo que necesitas para una experiencia de reserva perfecta, sin complicaciones ni sorpresas.</p>
+      <h2 class="section-title" id="adv-title">10 Ventajas de Solicitar <br>tu Cita por <em>WhatsApp</em></h2>
+      <p class="section-sub">Un proceso directo y transparente para solicitar tu cita y confirmar la disponibilidad con nuestro equipo.</p>
     </div>
 
     <div class="advantages__grid">
@@ -3771,7 +3781,7 @@
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
         </div>
         <div class="adv-card__title">Proceso Ultra Rápido</div>
-        <p class="adv-card__desc">Reserva tu cita en menos de un minuto. Solo 3 pasos: servicio, horario y confirmación.</p>
+        <p class="adv-card__desc">Envía tu solicitud en menos de un minuto con servicio, fecha, hora y nombre.</p>
       </div>
       <!-- 2 -->
       <div class="adv-card sr">
@@ -3779,8 +3789,8 @@
         <div class="adv-card__icon" aria-hidden="true">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg>
         </div>
-        <div class="adv-card__title">Elige tu Barbero</div>
-        <p class="adv-card__desc">Selecciona al barbero de tu confianza y ve su agenda específica en tiempo real.</p>
+        <div class="adv-card__title">Atención Personal</div>
+        <p class="adv-card__desc">Nuestro equipo revisa tu solicitud y te responde directamente por WhatsApp.</p>
       </div>
       <!-- 3 -->
       <div class="adv-card sr">
@@ -3788,8 +3798,8 @@
         <div class="adv-card__icon" aria-hidden="true">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
         </div>
-        <div class="adv-card__title">Tiempo Real</div>
-        <p class="adv-card__desc">Disponibilidad actualizada al instante. Cero sobre-turnos ni citas dobles.</p>
+        <div class="adv-card__title">Horario a tu Medida</div>
+        <p class="adv-card__desc">Indica la fecha y hora que prefieres; confirmamos contigo según disponibilidad.</p>
       </div>
       <!-- 4 -->
       <div class="adv-card sr">
@@ -3797,8 +3807,8 @@
         <div class="adv-card__icon" aria-hidden="true">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
         </div>
-        <div class="adv-card__title">Recordatorios Automáticos</div>
-        <p class="adv-card__desc">WhatsApp 24h y 2h antes. Tu ausentismo cae al mínimo y nunca olvidas tu cita.</p>
+        <div class="adv-card__title">Conversación Directa</div>
+        <p class="adv-card__desc">La confirmación queda en tu chat para que puedas consultar los datos de la cita.</p>
       </div>
       <!-- 5 -->
       <div class="adv-card sr">
@@ -3806,8 +3816,8 @@
         <div class="adv-card__icon" aria-hidden="true">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
         </div>
-        <div class="adv-card__title">Cancelación Fácil</div>
-        <p class="adv-card__desc">Reprograma o cancela desde el link de tu confirmación, hasta 4 horas antes sin costo.</p>
+        <div class="adv-card__title">Cambios por WhatsApp</div>
+        <p class="adv-card__desc">Si necesitas cambiar o cancelar, comunícate con el equipo por el mismo canal.</p>
       </div>
       <!-- 6 -->
       <div class="adv-card sr">
@@ -3824,8 +3834,8 @@
         <div class="adv-card__icon" aria-hidden="true">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
         </div>
-        <div class="adv-card__title">Pago Integrado</div>
-        <p class="adv-card__desc">Paga por adelantado o deja una seña para asegurar tu turno. También deja tu propina online.</p>
+        <div class="adv-card__title">Precios Transparentes</div>
+        <p class="adv-card__desc">Consulta el precio publicado antes de solicitar la cita; servicios variables se cotizan contigo.</p>
       </div>
       <!-- 8 -->
       <div class="adv-card sr">
@@ -3842,8 +3852,8 @@
         <div class="adv-card__icon" aria-hidden="true">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
-        <div class="adv-card__title">Historial de Citas</div>
-        <p class="adv-card__desc">Repite tu última reserva con un clic. Accede a tu historial y gestiona tus datos fácilmente.</p>
+        <div class="adv-card__title">Agrega una Nota</div>
+        <p class="adv-card__desc">Cuéntanos preferencias o detalles especiales para orientar mejor tu solicitud.</p>
       </div>
       <!-- 10 -->
       <div class="adv-card sr">
@@ -3851,8 +3861,8 @@
         <div class="adv-card__icon" aria-hidden="true">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
         </div>
-        <div class="adv-card__title">Panel de Métricas</div>
-        <p class="adv-card__desc">Dashboard para barberos: dinero proyectado, horas pico, productividad y servicios top.</p>
+        <div class="adv-card__title">Ubicación Clara</div>
+        <p class="adv-card__desc">Encuentra la dirección y abre la ruta en Google Maps desde la misma página.</p>
       </div>
     </div>
   </div>
@@ -3924,9 +3934,11 @@
           <div style="padding:40px 36px;display:flex;flex-direction:column;gap:0;height:100%;">
             <h3 class="booking__form-title">Solicitar Cita</h3>
             <div class="form-group">
+              <label class="form-label" for="dsk-nombre">Nombre completo</label>
               <input id="dsk-nombre" type="text" placeholder="Nombre completo" autocomplete="name" required maxlength="80" />
             </div>
             <div class="form-group">
+              <label class="form-label" for="dsk-servicio">Servicio</label>
               <select id="dsk-servicio" required>
                 <option value="" disabled selected>- Selecciona un servicio -</option>
                 <option>Corte de Cabello - $55.000</option>
@@ -3938,10 +3950,11 @@
               </select>
             </div>
             <div class="form-row">
-              <div class="form-group"><input id="dsk-fecha" type="date" aria-label="Fecha deseada" /></div>
-              <div class="form-group"><input id="dsk-hora" type="time" aria-label="Hora deseada" /></div>
+              <div class="form-group"><label class="form-label" for="dsk-fecha">Fecha deseada</label><input id="dsk-fecha" type="date" /></div>
+              <div class="form-group"><label class="form-label" for="dsk-hora">Hora deseada</label><input id="dsk-hora" type="time" /></div>
             </div>
             <div class="form-group">
+              <label class="form-label" for="dsk-nota">Nota adicional <span aria-hidden="true">(opcional)</span></label>
               <textarea id="dsk-nota" rows="3" placeholder="Nota adicional (opcional)" maxlength="240"></textarea>
             </div>
             <button class="form-submit" type="submit">
@@ -3988,6 +4001,8 @@
     </div>
   </div>
 </div>
+
+</main>
 
 <!-- ═══════════════════════════════════════════════
      FOOTER
