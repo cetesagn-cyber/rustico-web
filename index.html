@@ -2616,12 +2616,17 @@
       .service-card {
         position: relative;
         min-height: 240px;
-        padding: 0;
+        padding: 18px;
         overflow: hidden;
         cursor: pointer;
         border-radius: 6px;
         border: 1px solid var(--border);
         -webkit-tap-highlight-color: transparent;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-rows: 1fr auto auto auto;
+        column-gap: 12px;
+        align-items: end;
       }
       .service-card::before {
         content: '';
@@ -2666,9 +2671,10 @@
       .service-card__icon { display: none !important; }
 
       .service-card__name {
-        position: absolute;
-        bottom: 90px; left: 0; right: 0;
-        padding: 0 18px;
+        position: static;
+        grid-column: 1 / -1;
+        grid-row: 2;
+        padding: 0;
         font-size: 22px;
         line-height: 1.12;
         margin-bottom: 0;
@@ -2676,18 +2682,20 @@
         z-index: 3;
       }
       .service-card__meta {
-        position: absolute;
-        bottom: 60px; left: 18px;
+        position: static;
+        grid-column: 1 / -1;
+        grid-row: 3;
         z-index: 3;
-        margin-bottom: 0;
+        margin: 7px 0 0;
       }
       .service-card__desc { display: none; }
 
       .service-card__price {
-        position: absolute;
-        bottom: 14px; left: 18px;
+        position: static;
+        grid-column: 1;
+        grid-row: 4;
         font-size: 19px;
-        margin-bottom: 0;
+        margin: 12px 0 0;
         z-index: 3;
       }
       .service-card__price small { display: none; }
@@ -2697,8 +2705,10 @@
         display: flex;
         align-items: center;
         gap: 5px;
-        position: absolute;
-        bottom: 14px; right: 18px;
+        position: static;
+        grid-column: 2;
+        grid-row: 4;
+        align-self: end;
         background: var(--gold);
         color: var(--black);
         font-family: var(--ff-body);
@@ -2712,12 +2722,13 @@
         border-radius: 3px;
         cursor: pointer;
         z-index: 4;
+        margin-top: 12px;
         -webkit-tap-highlight-color: transparent;
       }
     }
 
     @media (max-width: 480px) {
-      .service-card { min-height: 210px; }
+      .service-card { min-height: 230px; }
       .service-card__name { font-size: 19px; bottom: 62px; }
     }
 
@@ -2883,14 +2894,13 @@
         font-size: 13.5px;
       }
       .service-card {
-        min-height: 250px;
+        min-height: 230px;
       }
       .service-card__name {
-        bottom: 96px;
         font-size: 18px;
       }
       .service-card__meta {
-        bottom: 66px;
+        margin-top: 6px;
       }
       .service-card__price {
         font-size: 17px;
