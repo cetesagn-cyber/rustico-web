@@ -2465,7 +2465,48 @@
     /* ═══════════════════════════════════════════════════
        SERVICE CARDS — mobile visual (imagen de fondo)
     ═══════════════════════════════════════════════════ */
-    .service-card__reservar-btn { display: none; }
+    .service-card__reservar-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      min-height: 44px;
+      margin-top: 20px;
+      padding: 11px 18px;
+      border: 1px solid var(--gold);
+      border-radius: 3px;
+      background: transparent;
+      color: var(--gold-light);
+      font: 800 10.5px var(--ff-body);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: color var(--dur), background var(--dur), transform var(--dur), box-shadow var(--dur);
+    }
+    .service-card__reservar-btn:hover {
+      color: var(--black);
+      background: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 9px 24px rgba(201,168,76,.24);
+    }
+    .services__booking-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-top: 28px;
+      padding: 26px 30px;
+      border: 1px solid rgba(211,174,82,.28);
+      background: linear-gradient(120deg, rgba(211,174,82,.12), rgba(18,29,49,.7));
+    }
+    .services__booking-cta strong {
+      display: block;
+      margin-bottom: 4px;
+      font-family: var(--ff-display);
+      font-size: 22px;
+    }
+    .services__booking-cta p { color: var(--gray); font-size: 13px; }
+    .services__booking-cta .btn { flex-shrink: 0; }
 
     /* ═══════════════════════════════════════════════════
        MODAL RESERVA — mobile
@@ -2613,6 +2654,8 @@
 
       /* Service cards — imagen de fondo */
       .services__grid { grid-template-columns: 1fr; gap: 10px; }
+      .services__booking-cta { align-items: stretch; flex-direction: column; padding: 22px 20px; }
+      .services__booking-cta .btn { width: 100%; }
       .service-card {
         position: relative;
         min-height: 240px;
@@ -3231,6 +3274,17 @@
         </button>
       </div>
 
+    </div>
+
+    <div class="services__booking-cta sr">
+      <div>
+        <strong>Tu próximo estilo comienza aquí</strong>
+        <p>Consulta la disponibilidad real de nuestros barberos y reserva en pocos pasos.</p>
+      </div>
+      <a href="https://admin.rusticobarbershop.co/reservar" class="btn btn-gold">
+        Ver agenda y reservar
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+      </a>
     </div>
 
     <!-- ── MENÚ DE PRECIOS COMPLETO ── -->
