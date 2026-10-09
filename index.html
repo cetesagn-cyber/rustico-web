@@ -1312,10 +1312,6 @@
       flex-direction: column;
       box-shadow: 0 30px 90px rgba(0,0,0,.48);
     }
-    .booking__form-box > #cal-booking {
-      flex: 1;
-      min-height: 620px;
-    }
     .booking__form-box::before {
       content:'';
       position: absolute; top:0; left:0; right:0;
@@ -2839,12 +2835,6 @@
         padding-top: max(26px, env(safe-area-inset-top, 0));
         padding-bottom: max(26px, env(safe-area-inset-bottom, 0));
       }
-      .booking__form-box > #cal-booking {
-        min-height: 0;
-      }
-      #cal-booking > div {
-        padding: 34px 28px !important;
-      }
     }
 
     @media (max-width: 768px) {
@@ -2907,9 +2897,6 @@
       }
       .gallery__item:nth-child(7) {
         height: 230px !important;
-      }
-      #cal-booking > div {
-        padding: 28px 20px !important;
       }
       .booking__form-title {
         font-size: 22px;
@@ -3014,7 +3001,7 @@
 </script>
 
 <!-- ═══ WHATSAPP FLOAT ═══ -->
-<a class="wa-float" href="https://wa.me/573133930398?text=Hola%20R%C3%BAstico!%20Quiero%20reservar%20una%20cita." target="_blank" rel="noopener noreferrer" title="Escríbenos por WhatsApp" data-track="whatsapp_click" data-track-location="floating_button">
+<a class="wa-float" href="https://wa.me/573133930398?text=Hola%20R%C3%BAstico!" target="_blank" rel="noopener noreferrer" title="Escríbenos por WhatsApp" data-track="whatsapp_click" data-track-location="floating_button">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 <a class="appt-float" href="https://book.weibook.co/rustico" title="Agendar cita">
@@ -3994,42 +3981,6 @@
         </a>
       </div>
 
-      <div class="booking__form-box sr right">
-        <form id="cal-booking" novalidate>
-          <div style="padding:40px 36px;display:flex;flex-direction:column;gap:0;height:100%;">
-            <h3 class="booking__form-title">Solicitar Cita</h3>
-            <div class="form-group">
-              <label class="form-label" for="dsk-nombre">Nombre completo</label>
-              <input id="dsk-nombre" type="text" placeholder="Nombre completo" autocomplete="name" required maxlength="80" />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="dsk-servicio">Servicio</label>
-              <select id="dsk-servicio" required>
-                <option value="" disabled selected>- Selecciona un servicio -</option>
-                <option>Corte de Cabello - $55.000</option>
-                <option>Arreglo de Barba - $50.000</option>
-                <option>Combo Corte + Barba - $99.000</option>
-                <option>Keratina &amp; Colorimetría - desde $70.000</option>
-                <option>Spa Facial (6 mascarillas) - $200.000</option>
-                <option>Servicio VIP - $300.000</option>
-              </select>
-            </div>
-            <div class="form-row">
-              <div class="form-group"><label class="form-label" for="dsk-fecha">Fecha deseada</label><input id="dsk-fecha" type="date" /></div>
-              <div class="form-group"><label class="form-label" for="dsk-hora">Hora deseada</label><input id="dsk-hora" type="time" /></div>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="dsk-nota">Nota adicional <span aria-hidden="true">(opcional)</span></label>
-              <textarea id="dsk-nota" rows="3" placeholder="Nota adicional (opcional)" maxlength="240"></textarea>
-            </div>
-            <button class="form-submit" type="submit">
-              Reservar por WhatsApp
-            </button>
-            <p style="font-size:11.5px;color:var(--gray);margin-top:12px;text-align:center;">Te confirmamos disponibilidad por WhatsApp</p>
-          </div>
-        </form>
-      </div>
-
     </div>
   </div>
 </section>
@@ -4318,69 +4269,6 @@
   }, { threshold: 0.5 });
   counterEls.forEach(el => counterObs.observe(el));
 
-  const WHATSAPP_BOOKING_URL = 'https://wa.me/573133930398?text=';
-  const todayISO = new Date().toISOString().slice(0, 10);
-  document.querySelectorAll('input[type="date"]').forEach(input => {
-    input.min = todayISO;
-  });
-  document.getElementById('dsk-servicio')?.addEventListener('change', function() {
-    this.classList.add('filled');
-  });
-  document.getElementById('cal-booking')?.addEventListener('submit', event => {
-    event.preventDefault();
-    enviarReservaWA();
-  });
-
-  function markInvalid(el) {
-    if (!el) return;
-    el.style.borderColor = 'var(--gold)';
-    el.focus();
-  }
-
-  function resetFieldState(el) {
-    if (el) el.style.borderColor = '';
-  }
-
-  function openWhatsAppBooking(message) {
-    window.open(WHATSAPP_BOOKING_URL + encodeURIComponent(message), '_blank', 'noopener');
-  }
-
-  window.enviarReservaWA = function() {
-    window.location.assign('https://book.weibook.co/rustico');
-    return;
-    const nombreEl = document.getElementById('dsk-nombre');
-    const servicioEl = document.getElementById('dsk-servicio');
-    const fechaEl = document.getElementById('dsk-fecha');
-    const horaEl = document.getElementById('dsk-hora');
-    const notaEl = document.getElementById('dsk-nota');
-    const nombre   = (nombreEl?.value || '').trim();
-    const servicio = servicioEl?.value || '';
-    const fecha    = fechaEl?.value || '';
-    const hora     = horaEl?.value || '';
-    const nota     = (notaEl?.value || '').trim();
-
-    [nombreEl, servicioEl, fechaEl, horaEl, notaEl].forEach(resetFieldState);
-    if (!nombre) { markInvalid(nombreEl); return; }
-    if (!servicio) { markInvalid(servicioEl); return; }
-    if (fecha && fecha < todayISO) { markInvalid(fechaEl); return; }
-
-    const fechaFmt = fecha ? new Date(fecha + 'T12:00').toLocaleDateString('es-CO', { weekday:'long', day:'numeric', month:'long' }) : 'por confirmar';
-    const horaFmt  = hora || 'por confirmar';
-
-    const msg =
-      `Hola Rústico Barber\n\n` +
-      `Quiero reservar una cita:\n` +
-      `- Servicio: ${servicio}\n` +
-      `- Fecha: ${fechaFmt}\n` +
-      `- Hora: ${horaFmt}\n` +
-      `- Nombre: ${nombre}\n` +
-      (nota ? `- Nota: ${nota}\n` : '') +
-      `\nHay disponibilidad?`;
-    trackEvent('desktop_booking_submit', { service_name: servicio, booking_source: 'desktop_form' });
-    trackEvent('whatsapp_click', { cta_location: 'desktop_booking_form', service_name: servicio });
-    openWhatsAppBooking(msg);
-  };
-
   /* ── Smooth anchor scroll ── */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
@@ -4580,41 +4468,6 @@
 
   function confirmarWhatsApp() {
     window.location.assign('https://book.weibook.co/rustico');
-    return;
-    const nombreEl = document.getElementById('bookNombre');
-    const fechaEl = document.getElementById('bookFecha');
-    const horaEl = document.getElementById('bookHora');
-    const nombre  = (nombreEl?.value || '').trim();
-    const fecha   = fechaEl?.value || '';
-    const hora    = horaEl?.value || '';
-    const servicio = nameEl?.textContent || 'Servicio';
-    const precio   = priceEl?.textContent || '';
-
-    [nombreEl, fechaEl, horaEl].forEach(resetFieldState);
-    if (!nombre) { markInvalid(nombreEl); return; }
-    if (fecha && fecha < todayISO) { markInvalid(fechaEl); return; }
-
-    const fechaFmt = fecha ? new Date(fecha + 'T12:00').toLocaleDateString('es-CO', { weekday:'long', day:'numeric', month:'long' }) : 'por confirmar';
-    const horaFmt  = hora  || 'por confirmar';
-
-    const msg =
-      `Hola Rústico Barber\n\n` +
-      `Quiero reservar una cita:\n` +
-      `- Servicio: ${servicio}\n` +
-      `- Precio: ${precio}\n` +
-      `- Fecha: ${fechaFmt}\n` +
-      `- Hora: ${horaFmt}\n` +
-      `- Nombre: ${nombre}\n\n` +
-      `Hay disponibilidad?`;
-
-    trackEvent('booking_whatsapp_submit', {
-      service_name: servicio,
-      service_price: precio,
-      booking_source: 'booking_modal'
-    });
-    trackEvent('whatsapp_click', { cta_location: 'booking_modal', service_name: servicio });
-    openWhatsAppBooking(msg);
-    cerrarReserva();
   }
 </script>
 
